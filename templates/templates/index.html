@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>coffee brew</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F3E6D4;
+            color: #333;
+        }
+        header {
+            background-color: #C7A49D;
+            color: black;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #FFD700;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: black;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .main-content {
+            display: flex;
+            #flex-wrap: wrap;
+           #justify-content: space-around;
+            margin-top: 20px;
+        }
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 10px;
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            width: 50%;
+            height: auto;
+        }
+        footer {
+            background-color: #F3E6D4;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Coffee brew</h1>
+        <p>Caffeine Boosts Memory, mood, and alertness.</p>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="/login">login</a>
+        <a href="{{ url_for('register') }}">sign up</a>
+        <a href="/addfood">add food</a>
+
+
+
+{% for menu in menu %}
+
+    </nav>
+    <div class="container">
+        <section class="main-content">
+            <div class="product">
+                <h3>{{ menu.food_name }}</h3>
+                <h3>{{ menu.food_type }}</h3>
+                <p>A rich and bold shot of coffee.</p>
+                {{ menu.price }}
+                 <img src="{{ menu.food_image }}" width="100" height="200"><img/>
+            </div>
+
+        </section>
+    </div>
+
+{% endfor %}
+
+    </footer>
+</body>
+</html>
